@@ -10,3 +10,42 @@
   <p>Hello, World!</p>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 가능한 이미지</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showContent(type) {
+            var image1 = document.getElementById('image1');
+            var image2 = document.getElementById('image2');
+            var text = document.getElementById('text');
+
+            image1.classList.add('hidden');
+            image2.classList.add('hidden');
+            text.classList.add('hidden');
+
+            if (type === 'image2') {
+                image2.classList.remove('hidden');
+            } else if (type === 'text') {
+                text.classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>클릭 가능한 이미지</h1>
+    <img id="image1" src="https://github.com/your-username/your-repository/raw/main/images/image1.jpg" alt="첫 번째 이미지" style="cursor:pointer;" onclick="showContent('image2')">
+    <img id="image2" src="https://github.com/your-username/your-repository/raw/main/images/image2.jpg" alt="두 번째 이미지" class="hidden" style="cursor:pointer;" onclick="showContent('text')">
+    <div id="text" class="hidden">
+        <p>이것은 클릭 후 나타나는 텍스트입니다.</p>
+    </div>
+</body>
+</html>
